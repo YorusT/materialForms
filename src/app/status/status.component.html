@@ -1,0 +1,6 @@
+
+ <div class="status-box" [ngSwitch]="status">
+  <mat-spinner *ngSwitchCase="'pending'" [diameter]="20"></mat-spinner>
+  <div *ngSwitchCase="'error'" class="status error">Error</div>
+  <div *ngSwitchCase="'success'" class="status success">Success</div>
+</div>

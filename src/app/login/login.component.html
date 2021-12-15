@@ -1,0 +1,38 @@
+<mat-card>
+  <nav mat-tab-nav-bar mat-align-tabs="center" color="accent">
+    <a
+    mat-tab-link
+    (click)="mode$.next('signin')"
+    [active]="(mode$ | async) === 'signin'"
+    color="teal"
+    >
+    Login
+  </a>
+
+  <a
+    mat-tab-link
+    (click)="mode$.next('signup')"
+    [active]="(mode$ | async) === 'signup'"
+    color="teal"
+    >
+    Register
+  </a>
+
+  </nav>
+  <app-signin
+  *ngIf="(mode$ | async) === 'signin'"
+  (signIn)="signIn$.next($event)"
+  [disabled]="(status$ |async) === 'pending'"
+  ></app-signin>
+
+  <app-signup
+  *ngIf="(mode$ | async) === 'signup'"
+  (signUp)="signUp$.next($event)"
+  [disabled]="(status$ |async) === 'pending'"
+  ></app-signup>
+
+  <mat-card-content>
+    <app-status [status]="status$ | async"></app-status>
+  </mat-card-content>
+
+</mat-card>

@@ -1,0 +1,22 @@
+.status-box {
+  text-align: center;
+  margin-top: 1rem;
+}
+.status {
+  color: rgba(0, 0, 0, 0.5);
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 0.8rem;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.error {
+  background: orange;
+}
+.success {
+  background: lightgreen;
+}
+mat-spinner {
+  margin: auto;
+}
